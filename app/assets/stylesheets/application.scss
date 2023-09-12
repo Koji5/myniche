@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;  // 追加: ページ全体のスクロールを無効にする
+}
+
+.header {
+  position: fixed;  // ヘッダーを固定
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;  // 他の要素の上に表示されるようにする
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  position: fixed;  // フッターを固定
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;  // 他の要素の上に表示されるようにする
+  text-align: center;
+}
+
+.content-wrapper {
+  margin-top: 75px;  // ヘッダーの高さに合わせて調整。実際の値は調整が必要。
+  margin-bottom: 35px;  // フッターの高さに合わせて調整。実際の値は調整が必要。
+  overflow-y: auto;  // 縦方向にスクロール
+  height: calc(100vh - 75px - 35px - 20px);  // 100%からヘッダーとフッターの高さを引いた値。実際の値は調整が必要。
+  position: relative;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+@import "niches";
